@@ -1,0 +1,17 @@
+Day 1: Arrays (advanced concepts, dynamic arrays)
+Day 2: Linked Lists (singly, doubly, circular)
+Day 3: Stacks (array and linked implementations)
+Day 4: Queues (array, linked, priority, circular)
+Day 5: Hash Tables (collision resolution techniques)
+Day 6: Trees (binary trees, binary search trees)
+Day 7: Balanced Trees (AVL, Red-Black trees)
+Day 8: Heaps (binary heap, heapify, priority queue)
+Day 9: Graphs (representation, traversal: BFS, DFS)
+Day 10: Graph algorithms (Dijkstra, MST algorithms)
+Day 11: Tries and advanced tree structures
+Day 12: Disjoint Set/Union-Find
+Day 13: Segment Trees/Fenwick Trees (Binary Indexed Trees)
+Day 14: Sorting algorithms (quick, merge, heap sorts)
+Day 15: Searching algorithms and review (binary search, interpolation)
+
+Notes will be uploaded every 2 days starting today.
