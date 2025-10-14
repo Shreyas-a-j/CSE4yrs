@@ -1,6 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+void matrixMultiply(int **a, int **b,  int **result, int rows, int cols) {
+    for(int i  = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            result[i][j] = 0;
+            for(int k = 0; k < cols; k++){
+                result[i][j] += a[i][k]* b[k][j];
+            }
+        }
+    }
+}
+
 int main(){
     int rows=3, cols=3;
 
@@ -21,17 +32,6 @@ int main(){
         for(int j = 0; j < cols; j++){
             matrix1[i][j] = init1[i][j];
             matrix2[i][j] = init2[i][j];
-        }
-    }
-
-    void matrixMultiply(int **a, int **b,  int **result, int rows, int cols) {
-        for(int i  = 0; i < rows; i++){
-            for(int j = 0; j < cols; j++){
-                result[i][j] = 0;
-                for(int k = 0; k < cols; k++){
-                    result[i][j] += a[i][k]* b[k][j];
-                }
-            }
         }
     }
 
