@@ -8,7 +8,7 @@ struct Node {
 };
 
 // Function to create a new node
-struct Node* createNode(int data) {
+struct Node* createNode(int data) { // data = 30;
     // Allocate memory for a new node
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     
@@ -19,10 +19,11 @@ struct Node* createNode(int data) {
     }
     
     // Initialize the new node
-    newNode->data = data;    // Set the data value
+    (*newNode).data = data;    // Set the data value = 20;
     newNode->next = NULL;    // Set next pointer to NULL (end of list)
     
     return newNode;          // Return pointer to the new node
+// newNode has data = 20, next(pointer) = NULL.
 }
 
 // Function to display the linked list
@@ -38,9 +39,9 @@ void displayList(struct Node* head) {
     printf("Linked List: ");
     
     // Traverse the list until we reach the end (NULL)
-    while (temp != NULL) {
-        printf("%d -> ", temp->data);  // Print current node's data
-        temp = temp->next;             // Move to the next node
+    while (temp != NULL) { // unless our temp points to NULL keep this loop alive
+        printf("%d -> ", temp->data);  // Print current node's data // 10, 20, 30
+        temp = temp->next;             // Move to the next node  
     }
     printf("NULL\n");  // Indicate end of list
 }
@@ -51,7 +52,8 @@ int main() {
     // Create some nodes manually
     head = createNode(10);              // Create first node with data 10
     head->next = createNode(20);        // Create second node with data 20
-    head->next->next = createNode(30);  // Create third node with data 30
+    head->next->next = createNode(30); 
+    head->next->next->next = createNode(40); // Create third node with data 40
     
     // Display the created list
     displayList(head);
