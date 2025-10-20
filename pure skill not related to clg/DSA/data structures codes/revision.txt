@@ -1,0 +1,36 @@
+#Quick_partition.c
+main()
+def array
+print unsorted arr
+quicksort(array, 0, n-1)
+    if (low < high)
+        pi = partition(arr, low, high) swap() return i+1
+        quicksort(arr, low, p-1)
+        quicksort(arr, p+1, high)
+print sorted array
+
+
+-> Linked List - 2 types
+    singly - Is a data structure which Contains data and a pointer(pointing to next node); one way traversing
+    doubly - Is a ds which contains data and 2 pointers(the next pointer pointing to next
+     node and previous pointer pointing to previous node) two way traversing
+#implimentation of linked lists in c
+main()
+initialize head pointer to null
+head = createNode(x); // call createNode function which created a new node 
+head->next = createNode(x1), // traverse to the last element and assign the value 
+.....
+display()
+    temp = head
+     while (temp != NULL) { // unless our temp points to NULL keep this loop alive
+        printf("%d -> ", temp->data);  // Print current node's data // x, x1, x2 ....
+        temp = temp->next;             // Move to the next node  
+    }
+
+-> Stack - Stack is leniar data structure, that follows LIFO or FILO principle.
+    we can implimet stacks in arrays or linked lists. 
+    some operations we use in stack are 
+    push()
+    pop()
+    peek()
+    
