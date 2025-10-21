@@ -34,3 +34,10 @@ display()
     pop()
     peek()
     
+-> Queue - Is a linear ds, that follows FIFO or LILO principle.
+    we can implement in arrays or linked lists
+    some operations on queue are
+    enqueue()
+    dequeue()
+    peek()
+    
