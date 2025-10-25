@@ -1,3 +1,6 @@
+// circular_queue.c
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
@@ -94,11 +97,11 @@ int main() {
     enqueueCircular(&cq, 30);
     enqueueCircular(&cq, 40);
     enqueueCircular(&cq, 50); // Queue is now full
-    displayCircularQueue(&cq);
+    displayCircularQueue(&cq); // 10, 20, 30, 40, 50
 
     printf("Dequeued element: %d\n", dequeueCircular(&cq));
     printf("Dequeued element: %d\n", dequeueCircular(&cq));
-    displayCircularQueue(&cq);
+    displayCircularQueue(&cq); // 30, 40 ,50
 
     enqueueCircular(&cq, 60);
     enqueueCircular(&cq, 70); // Should wrap around

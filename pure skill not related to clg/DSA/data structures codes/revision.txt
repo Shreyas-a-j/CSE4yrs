@@ -40,4 +40,6 @@ display()
     enqueue()
     dequeue()
     peek()
+
+-> Hash ?
     

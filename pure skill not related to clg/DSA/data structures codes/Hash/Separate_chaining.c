@@ -1,3 +1,23 @@
+/* Hashing is a technique used in data structures 
+that efficiently stores and retrieves data in a 
+way that allows for quick access.
+
+Hashing involves mapping data to a specific 
+index in a hash table (an array of items) 
+using a hash function. It enables fast retrieval 
+of information based on its key.
+
+Hashing refers to the process of generating a 
+small sized output (that can be used as index 
+in a table) from an input of typically large 
+and variable size. Hashing uses mathematical 
+formulas known as hash functions to do the 
+transformation. This technique determines an 
+index or location for the storage of an item 
+in a data structure called Hash Table.
+Load Factor = (Number of elements in the table) / (Total number of buckets)
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
@@ -23,12 +43,12 @@ typedef struct {
 // Hash function (djb2 algorithm for strings)
 unsigned long hash_function(const char* str, int table_size) {
     unsigned long hash = 5381;
-    int c;
+    int c; // apple -> 97,112,112,108,101 a , p, p, l, e \0
     while ((c = *str++)) {
         hash = ((hash << 5) + hash) + c; // hash * 33 + c
     }
-    return hash % table_size;
-}
+    return hash % table_size; 
+} 
 
 // Create new node
 Node* create_node(const char* key, int value) {

@@ -15,7 +15,7 @@ typedef struct {
 
 // Create new node
 Node* create(int value) {
-    Node* newNode = (Node*)malloc(sizeof(Node));
+    Node* newNode = (Node*)malloc(sizeof(Node));  
     if (!newNode) {
         printf("Memory allocation failed\n");
         exit(EXIT_FAILURE);
@@ -57,7 +57,7 @@ int dequeueLinkedQueue(LinkedQueue* q) {
     }
 
     Node* temp = q->front;
-    int value = temp->data;
+    int value = temp->data; // 10
     q->front = q->front->next;
     free(temp);
     q->size--;
@@ -75,7 +75,7 @@ int peekLinkedQueue(LinkedQueue* q) {
         printf("Linked Queue is empty\n");
         return -1; // Indicate queue is empty
     }
-    return q->front->data;
+    return q->front->data; 
 }
 
 // Display linked queue
@@ -88,7 +88,7 @@ void displayLinkedQueue(LinkedQueue* q) {
     printf("Linked Queue: ");
     Node* current = q->front;
     while (current) {
-        printf("%d ", current->data);
+        printf("%d ", current->data); // 10, 20, 30
         current = current->next;
     }
     printf("\n");
@@ -111,12 +111,11 @@ int main() {
     enqueueLinkedQueue(&q, 10);
     enqueueLinkedQueue(&q, 20);
     enqueueLinkedQueue(&q, 30);
-    displayLinkedQueue(&q);
+    displayLinkedQueue(&q); // 10, 20 ,30
 
-    printf("Dequeued element: %d\n", dequeueLinkedQueue(&q));
-    displayLinkedQueue(&q);
+    printf("Dequeued element: %d\n", dequeueLinkedQueue(&q)); // 10
 
-    printf("Front element is %d\n", peekLinkedQueue(&q));
+    printf("Front element is %d\n", peekLinkedQueue(&q)); // 20
 
     return 0;
 }
