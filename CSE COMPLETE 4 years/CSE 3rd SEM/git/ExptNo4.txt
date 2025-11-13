@@ -1,0 +1,77 @@
+Expt No 04:
+Clone a remote Git repository to your local machine.
+
+Historically git used "master" as the default branch. When you run git init, Git automatically created branch named "master".
+
+GitHub (and others GitLab, Bitbucket , Azure Devops) in 2020 changed the default branch to "main". When you create a new repository on GitHub, first branch becomes main. 
+
+  Local Repo                                              v/s  Remote Repo
+ 
+git init: your local repo gets                        Remote repository has 
+          "master"                                    "main"
+
+ we can push master explicitly to		      Remote repository contains
+ remote by:  git push -u origin master                two branches "main" and 
+                                                      your local branch "master"              
+
+
+Fixing the mismatch master and main, We have two options.
+rename your master to main locally by:
+         git branch -M main
+         git push -u origin main
+2. Keep local master and push it. (push master explicitly)
+         git push -u origin master
+
+Configuring git for default branch 
+As of git2.28 and modern git support to set your local default branch to main by configuring git.
+         git config --global init.defaultBranch main
+
+
+Cloning means getting or downloading entire remote repository to our local machine.
+Remote repository is a folder with a name ends in .git which is created by github.com user in remote github server.
+
+To create remote repository , we must create personnel access token (PAT). 
+To create PAT - 
+1.	Login to github.com with your Email-id and password
+2.	Go to profile account settings
+3.	Go to Developer settings
+4.	Go to personnel access token (classic)
+5.	Check on -> repo, workflow, delete packages, write packages.
+6.	Click on generate new token
+7.	The above steps gives PAT key , copy it , and save it in a file under     your directory.
+
+Now create new remote repository
+1.	Go to home page in github.com , click on  new repository button
+2.	Give name for repository, this repository created with a url link
+3.	Eg. If you given team_project as name, Then url link is
+(https://github.com/ your user name /team_project.git) This is remote repository.
+	
+Cloning remote git repository to your local machine. 
+1.	Clone remote git repository to your own folder (Eg: naveen)
+2.	Being in your own directory : Execute command  
+        git clone “url link of remote git repository” . 
+        This command downloads remote git repository (team_project) into
+        your own directory.
+3.	Change working directory to remote git repository by cmd:   
+        cd team_project
+4.	When you are in remote git repository your working branch shows  (main). 
+        (because default working branch for remote git repository is main).
+5.	Now your local working branch and remote working branch becomes same
+        (matches).
+
+Update and push (Note you cloned empty  remote git repository "team_project")
+1.	creating one file by notepad, add it to staging area and commit that
+        file.
+2.	Now, git push -u origin main  (After pushing github remote repository
+                                         is updated)
+3.	Check remote github repository in your github.com home page.
+
+Suppose if you are in local branch master
+1.	Clone empty remote git repository : git clone "url link of remote git
+        to your own directory.                                  repository"
+2.	create one file by notepad, add it to staging area and commit that.
+3.	connect your local repo to github: 
+           git remote add origin "url link of remote git repository"
+4.	change your local branch master to main:
+           git branch -M main
+5.	push to remote github: git push -u origin main
