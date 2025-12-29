@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1766849517 source:e:\downloads\clg_related\cse complete 4 years\cse 3rd sem\data_structures_and_applications\lab_codes\7thprg\7th.c
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<string.h>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1766411842 source:e:\downloads\clg_related\cse complete 4 years\cse 3rd sem\data_structures_and_applications\lab_codes\dsa\prg1.c
+
+1766411797 source:e:\downloads\clg_related\cse complete 4 years\cse 3rd sem\data_structures_and_applications\lab_codes\dsa\prgprg1.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
