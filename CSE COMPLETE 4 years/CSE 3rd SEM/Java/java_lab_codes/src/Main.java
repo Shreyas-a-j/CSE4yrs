@@ -1,13 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import java.awt.*;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+interface Resizable{
+    void resizeWidth(int width);
+    void resizeHeight(int height);
+}
+class Rectangle implements Resizable{
+    int w;
+    int h;
+
+    Rectangle(int width, int height){
+        w = width;
+        h = height;
+    }
+
+    public void resizeWidth(int width){
+        w = width;
+        System.out.println("New Width: "+w);
+    }
+    public void resizeHeight(int height){
+        h = height;
+        System.out.println("New Height: "+h);
+    }
+    public void display(){
+        System.out.println("Rectangle Width: "+w+", Height: "+h);
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle(20,30);
+        System.out.println("Initial Size: ");
+        r.display();
+        r.resizeWidth(30);
+        r.resizeHeight(40);
+        System.out.println("After Resize: ");
+        r.display();
     }
 }
