@@ -1,44 +1,57 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<memory.h>
+#include<string.h>
 
-struct node
+
+struct Day
 {
-    char name[25];
-    char usn[11];
-    char dep[10];
-    int sem;
-    int phno[10];
-    struct node *next;
+    char *day_name;
+    char *activity;
+    int date;
 };
 
-typedef struct node Node;
+void create(struct Day *day)
+{
+    day->day_name = (char*)malloc(sizeof(char*20));
+    day->activity = (char*)malloc(sizeof(char*100));
+    printf("\nEnter the Day Name: ");
+    scanf("%s",day->day_name);
+    printf("\nEnter the Date: ");
+    scanf("%d",&day->date);
+    printf("\nEnter the Activity: ");
+    scanf("%s",day->activity);
 
-Node *create();
-Node *insertnNode(Node *head);
-void countnodes(Node *head);
-Node *insertrear(Node *head);
-Node *deleterear(Node *head);
-Node *insertfront(Node *head);
-Node *deletefront(Node *head);
-void display(Node *head);
-
+}
+void read(struct Day *calander)
+{
+    for(int i=0; i<7; i++){
+        printf("Enter the details for Day %d",i+1);
+        create(&calander[i]);
+    }
+}
+void display(struct Day *calander)
+{
+    printf("Day Name\t Date\t Activity\n");
+    for(int i=0; i<n; i++){
+        printf("%s\t%d\t%s",calander[i].day_name,calander[i].date,calander[i].activity);
+    }
+}
+void freememory(struct Day *calander)
+{
+    for(int i=0; i<7; i++){
+        free(calander[i].day_name);
+        free(calander[i].activity);
+    }
+}
 void main()
 {
-    Node *head = NULL;
-    int ch;
-    while(1){
-        printf("\nEnter the choice:\n 1: insert n students\n 2: insert front\n 3: insert rear\n 4: delete front\n 5: delete rear\n 6: Display\n 7: exit");
-        scanf("%d",&ch);
-        switch(ch)
-        {
-            case 1: head = insertnNode(head); break;
-            case 2: head = insertfront(head); break;
-            case 3: head = insertrear(head); break;
-            case 4: head = deletefront(head); break;
-            case 5: head = deleterear(head); break;
-            case 6: display(head); break;
-            case 7: exit(0);
-        }
+    struct Day *calander = (struct Day*)malloc(sizeof(struct Day)*7);
+    if(calander == NULL){
+        printf("Memory allocation Failed");
     }
+    read(calander);
+    display(calander);
+    freememory(calander);
+    free(calander);
 }
